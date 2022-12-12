@@ -1,5 +1,13 @@
-package at.fhtw;public class Main {
+package at.fhtw;
+
+public class Main {
+
+
+
+
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+        OpenWeatherMapClient openWeatherClient = new OpenWeatherMapClient();
+
     }
 }
