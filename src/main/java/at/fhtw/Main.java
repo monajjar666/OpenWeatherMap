@@ -1,56 +1,30 @@
 package at.fhtw;
 
-import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.DecimalFormat;
 
 public class Main {
-    public static void main(String[] args) {
-        try {
 
-            String apiKey = "867af03f01d0abe6ad281a43f856f541";
+    public static void main(String[] args) throws Exception {
 
-            String city = "Vienna";
-            String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
+        String requestUrl = "http://api.openweathermap.org/data/2.5/weather?&APPID=f46c41d3ff9363cb6319493cbbf3e57b&q=Vienna";
+        // URL: a pointer to a "resource" on the World Wide Web
+        URL url = new URL(requestUrl);
+        // HttpURLConnection: to make a single request but the underlying network connection to the HTTP server
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET"); // GET returns data from the server.
+        conn.connect();
 
-            URL url = new URL(urlString);
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        int responseCode = conn.getResponseCode(); //Gets the status code from an HTTP response message
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            StringBuffer json = new StringBuffer(1024);
-            String tmp = "";
-            while ((tmp = reader.readLine()) != null)
-                json.append(tmp).append("\n");
-            reader.close();
-
-            JSONObject data = new JSONObject(json.toString());
-            /*
-
-            //try a new way:
-            ObjectMapper mapper = new ObjectMapper();
-            WeatherData weatherData = mapper.readValue(json.toString(), WeatherData.class);
-            System.out.println("Current temperature in " + weatherData.getCity() + ": " + weatherData.getTemperature() + "°C");
-            System.out.println("Current humidity in " + weatherData.getCity() + ": " + weatherData.getHumidity());
-*/
-            // Get the current weather data
-
-            double temperature = data.getJSONObject("main").getDouble("temp");
-            double humidity = data.getJSONObject("main").getDouble("humidity");
-            double windSpeed = data.getJSONObject("wind").getDouble("speed");
-
-            //format the celsius with many decimals to a number with only 2 decimal places
-            DecimalFormat df = new DecimalFormat("#.00");
-
-            System.out.println("Current temperature in " + city + ": "+ df.format(temperature) + "°C");
-            System.out.println("Current humidity in " + city + ": "+ humidity + "%");
-            System.out.println("Current wind speed in " + city + ": "+ windSpeed + "km/h");
-
-
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+        if (responseCode == HttpURLConnection.HTTP_OK){
+            InputStreamReader isr = new InputStreamReader(conn.getInputStream());
+            BufferedReader br = new BufferedReader(isr);
+            System.out.println(br.readLine());
+        } else {
+            System.out.println("Something is wrong with connection!");
         }
     }
 }
