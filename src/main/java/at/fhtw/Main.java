@@ -33,13 +33,11 @@ public class Main {
             // Get the current temperature in Kelvin
             double temperature = data.getJSONObject("main").getDouble("temp");
             // Convert from Kelvin to Celsius
-            double celsiusLong = temperature - 273;
-            //format the celsius with many decimals to a number with only one decimal
-            DecimalFormat df = new DecimalFormat("#.##");
-            df.setRoundingMode(RoundingMode.FLOOR);
-            double celsius = new Double(df.format(celsiusLong));
+            double celsius = temperature - 273;
+            //format the celsius with many decimals to a number with only 2 decimal places
+            DecimalFormat df = new DecimalFormat("#.00");
 
-            System.out.println("Current temperature in Vienna: " + celsius + "°C");
+            System.out.println("Current temperature in Vienna: " + df.format(celsius) + "°C");
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
