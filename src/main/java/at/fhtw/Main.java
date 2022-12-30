@@ -1,30 +1,47 @@
 package at.fhtw;
 
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.math.RoundingMode;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
 
 public class Main {
+    public static void main(String[] args) {
+        try {
 
-    public static void main(String[] args) throws Exception {
+            String apiKey = "867af03f01d0abe6ad281a43f856f541";
 
-        String requestUrl = "http://api.openweathermap.org/data/2.5/weather?&APPID=f46c41d3ff9363cb6319493cbbf3e57b&q=Vienna";
-        // URL: a pointer to a "resource" on the World Wide Web
-        URL url = new URL(requestUrl);
-        // HttpURLConnection: to make a single request but the underlying network connection to the HTTP server
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET"); // GET returns data from the server.
-        conn.connect();
+            String city = "Vienna";
+            String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
-        int responseCode = conn.getResponseCode(); //Gets the status code from an HTTP response message
+            URL url = new URL(urlString);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-        if (responseCode == HttpURLConnection.HTTP_OK){
-            InputStreamReader isr = new InputStreamReader(conn.getInputStream());
-            BufferedReader br = new BufferedReader(isr);
-            System.out.println(br.readLine());
-        } else {
-            System.out.println("Something is wrong with connection!");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuffer json = new StringBuffer(1024);
+            String tmp = "";
+            while ((tmp = reader.readLine()) != null)
+                json.append(tmp).append("\n");
+            reader.close();
+
+            JSONObject data = new JSONObject(json.toString());
+
+            // Get the current temperature in Kelvin
+            double temperature = data.getJSONObject("main").getDouble("temp");
+            // Convert from Kelvin to Celsius
+            double celsiusLong = temperature - 273;
+            //format the celsius with many decimals to a number with only one decimal
+            DecimalFormat df = new DecimalFormat("#.##");
+            df.setRoundingMode(RoundingMode.FLOOR);
+            double celsius = new Double(df.format(celsiusLong));
+
+            System.out.println("Current temperature in Vienna: " + celsius + "°C");
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
