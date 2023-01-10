@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="sending API get request and handling the responce with Json object">
+    <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="correct the decimal number">
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/WeatherData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/OpenWeatherMapClient.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +80,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2IVXhgjf2WEXgE1myBRGwG8YlyF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -192,7 +198,9 @@
       <workItem from="1670870112933" duration="2063000" />
       <workItem from="1672298089123" duration="2311000" />
       <workItem from="1672301669107" duration="550000" />
-      <workItem from="1672391727831" duration="2972000" />
+      <workItem from="1672391727831" duration="4228000" />
+      <workItem from="1672689487779" duration="6000" />
+      <workItem from="1673289525115" duration="9939000" />
     </task>
     <task id="LOCAL-00001" summary="sending API get request and handling the responce with Json object">
       <created>1672393117197</created>
@@ -201,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672393117197</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="correct the decimal number">
+      <created>1672397426624</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672397426624</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +236,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First class commit" />
     <MESSAGE value="sending API get request and handling the responce with Json object" />
-    <option name="LAST_COMMIT_MESSAGE" value="sending API get request and handling the responce with Json object" />
+    <MESSAGE value="correct the decimal number" />
+    <option name="LAST_COMMIT_MESSAGE" value="correct the decimal number" />
   </component>
 </project>
