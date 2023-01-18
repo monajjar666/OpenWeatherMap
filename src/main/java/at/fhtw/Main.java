@@ -1,6 +1,9 @@
 package at.fhtw;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -14,10 +17,12 @@ public class Main {
             String apiKey = "867af03f01d0abe6ad281a43f856f541";
 
             String city = "Vienna";
-            String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
+            String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            System.out.println();
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             StringBuffer json = new StringBuffer(1024);
@@ -27,28 +32,23 @@ public class Main {
             reader.close();
 
             JSONObject data = new JSONObject(json.toString());
-            /*
+            JSONArray weather = data.getJSONArray("weather");
+            JSONObject firstWeatherEntry = new JSONObject(weather.get(0).toString());
 
-            //try a new way:
-            ObjectMapper mapper = new ObjectMapper();
-            WeatherData weatherData = mapper.readValue(json.toString(), WeatherData.class);
-            System.out.println("Current temperature in " + weatherData.getCity() + ": " + weatherData.getTemperature() + "°C");
-            System.out.println("Current humidity in " + weatherData.getCity() + ": " + weatherData.getHumidity());
-*/
-            // Get the current weather data
-
+            // Get the current temperature in Kelvin
             double temperature = data.getJSONObject("main").getDouble("temp");
             double humidity = data.getJSONObject("main").getDouble("humidity");
-            double windSpeed = data.getJSONObject("wind").getDouble("speed");
-
+            // Convert from Kelvin to Celsius
+            double celsius = temperature - 273;
             //format the celsius with many decimals to a number with only 2 decimal places
             DecimalFormat df = new DecimalFormat("#.00");
-
-            System.out.println("Current temperature in " + city + ": "+ df.format(temperature) + "°C");
-            System.out.println("Current humidity in " + city + ": "+ humidity + "%");
-            System.out.println("Current wind speed in " + city + ": "+ windSpeed + "km/h");
+            // Get the description
 
 
+
+            System.out.println("Current temperature in Vienna: " + df.format(celsius) + "°C");
+            System.out.println("Current weather in Vienna: " + firstWeatherEntry);
+            System.out.println("Humidity: " + humidity);
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
