@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="getting weather Data">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="getting weather Data" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +67,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev_Mo" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -215,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672397426624</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="correction to include description &amp; wind speed">
+      <created>1674073562518</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1674073562518</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +239,7 @@
     <MESSAGE value="First class commit" />
     <MESSAGE value="sending API get request and handling the responce with Json object" />
     <MESSAGE value="correct the decimal number" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct the decimal number" />
+    <MESSAGE value="correction to include description &amp; wind speed" />
+    <option name="LAST_COMMIT_MESSAGE" value="correction to include description &amp; wind speed" />
   </component>
 </project>
