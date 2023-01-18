@@ -1,0 +1,164 @@
+Index: src/main/java/at/fhtw/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/at/fhtw/Main.java b/src/main/java/at/fhtw/Main.java
+--- a/src/main/java/at/fhtw/Main.java	
++++ b/src/main/java/at/fhtw/Main.java	
+@@ -1,4 +1,5 @@
+ package at.fhtw;
++import org.json.JSONObject;
+ 
+ import java.io.BufferedReader;
+ import java.io.InputStreamReader;
+@@ -6,25 +7,35 @@
+ import java.net.URL;
+ 
+ public class Main {
++    public static void main(String[] args) {
++        try {
++
++            String apiKey = "867af03f01d0abe6ad281a43f856f541";
++
++            String city = "Vienna";
++
++            String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+ 
+-    public static void main(String[] args) throws Exception {
++            URL url = new URL(urlString);
++            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+ 
+-        String requestUrl = "http://api.openweathermap.org/data/2.5/weather?&APPID=f46c41d3ff9363cb6319493cbbf3e57b&q=Vienna";
+-        // URL: a pointer to a "resource" on the World Wide Web
+-        URL url = new URL(requestUrl);
+-        // HttpURLConnection: to make a single request but the underlying network connection to the HTTP server
+-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+-        conn.setRequestMethod("GET"); // GET returns data from the server.
+-        conn.connect();
++            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
++            StringBuffer json = new StringBuffer(1024);
++            String tmp = "";
++            while ((tmp = reader.readLine()) != null)
++                json.append(tmp).append("\n");
++            reader.close();
+ 
+-        int responseCode = conn.getResponseCode(); //Gets the status code from an HTTP response message
++            JSONObject data = new JSONObject(json.toString());
+ 
+-        if (responseCode == HttpURLConnection.HTTP_OK){
+-            InputStreamReader isr = new InputStreamReader(conn.getInputStream());
+-            BufferedReader br = new BufferedReader(isr);
+-            System.out.println(br.readLine());
+-        } else {
+-            System.out.println("Something is wrong with connection!");
++            // Get the current temperature in Kelvin
++            double temperature = data.getJSONObject("main").getDouble("temp");
++            // Convert from Kelvin to Celsius
++            double celsius = temperature - 273;
++
++            System.out.println("Current temperature in Vienna: " + celsius + "°C");
++        } catch (Exception e) {
++            System.out.println("Error: " + e.getMessage());
+         }
+     }
+ }
+\ No newline at end of file
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	
++++ b/build.gradle	
+@@ -10,9 +10,14 @@
+ }
+ 
+ dependencies {
++    // https://mvnrepository.com/artifact/org.json/json
++    implementation group: 'org.json', name: 'json', version: '20220924'
++
+     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
++
+ }
++
+ 
+ test {
+     useJUnitPlatform()
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -6,6 +6,7 @@
+   <component name="ChangeListManager">
+     <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="First class commit">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -72,17 +73,17 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "/Users/yukarisp/IdeaProjects/fhtw/ode/OpenWeatherMap",
+-    "nodejs_package_manager_path": "npm",
+-    "settings.editor.selected.configurable": "preferences.fileTypes"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/Users/yukarisp/IdeaProjects/fhtw/ode/OpenWeatherMap&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
+   }
+-}]]></component>
+-  <component name="RunManager">
++}</component>
++  <component name="RunManager" selected="Application.Main">
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="at.fhtw.Main" />
+       <module name="OpenWeatherMap.main" />
+@@ -96,8 +97,30 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++    <configuration name="OpenWeatherMap [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
++      <ExternalSystemSettings>
++        <option name="executionName" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="externalSystemIdString" value="GRADLE" />
++        <option name="scriptParameters" value="--stacktrace" />
++        <option name="taskDescriptions">
++          <list />
++        </option>
++        <option name="taskNames">
++          <list>
++            <option value="build" />
++          </list>
++        </option>
++        <option name="vmOptions" />
++      </ExternalSystemSettings>
++      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
++      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
++      <DebugAllEnabled>false</DebugAllEnabled>
++      <method v="2" />
++    </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Gradle.OpenWeatherMap [build]" />
+         <item itemvalue="Application.Main" />
+       </list>
+     </recent_temporary>
