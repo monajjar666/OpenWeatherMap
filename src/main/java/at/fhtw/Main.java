@@ -1,6 +1,5 @@
 package at.fhtw;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -17,7 +16,7 @@ public class Main {
             String apiKey = "867af03f01d0abe6ad281a43f856f541";
 
             String city = "Vienna";
-            String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+            String urlString = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=metric";
 
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -38,17 +37,16 @@ public class Main {
             // Get the current temperature in Kelvin
             double temperature = data.getJSONObject("main").getDouble("temp");
             double humidity = data.getJSONObject("main").getDouble("humidity");
-            // Convert from Kelvin to Celsius
-            double celsius = temperature - 273;
+            double windSpeed = data.getJSONObject("wind").getDouble("speed");
+
             //format the celsius with many decimals to a number with only 2 decimal places
             DecimalFormat df = new DecimalFormat("#.00");
             // Get the description
 
-
-
-            System.out.println("Current temperature in Vienna: " + df.format(celsius) + "°C");
-            System.out.println("Current weather in Vienna: " + firstWeatherEntry);
-            System.out.println("Humidity: " + humidity);
+            System.out.println("Current weather in " + city + firstWeatherEntry);
+            System.out.println("Current temperature in " + city + ": "+ df.format(temperature) + "°C");
+            System.out.println("Current humidity in " + city + ": "+ humidity + "%");
+            System.out.println("Current wind speed in " + city + ": "+ windSpeed + "km/h");
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }

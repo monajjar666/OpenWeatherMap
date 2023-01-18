@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="correct the decimal number">
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/WeatherData.java" afterDir="false" />
+    <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="getting weather Data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/OpenWeatherMapClient.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,10 +177,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.OpenWeatherMap [build]" />
         <item itemvalue="Gradle.OpenWeatherMap [clean]" />
         <item itemvalue="Gradle.OpenWeatherMap [buildDependents]" />
+        <item itemvalue="Gradle.OpenWeatherMap [build]" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.OpenWeatherMap [build]" />
       </list>
     </recent_temporary>
   </component>
