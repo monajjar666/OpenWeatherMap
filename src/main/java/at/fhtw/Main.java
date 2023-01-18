@@ -1,6 +1,8 @@
 package at.fhtw;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -19,6 +21,8 @@ public class Main {
             URL url = new URL(urlString);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
+            System.out.println();
+
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
             StringBuffer json = new StringBuffer(1024);
             String tmp = "";
@@ -27,28 +31,22 @@ public class Main {
             reader.close();
 
             JSONObject data = new JSONObject(json.toString());
-            /*
+            JSONArray weather = data.getJSONArray("weather");
+            JSONObject firstWeatherEntry = new JSONObject(weather.get(0).toString());
 
-            //try a new way:
-            ObjectMapper mapper = new ObjectMapper();
-            WeatherData weatherData = mapper.readValue(json.toString(), WeatherData.class);
-            System.out.println("Current temperature in " + weatherData.getCity() + ": " + weatherData.getTemperature() + "°C");
-            System.out.println("Current humidity in " + weatherData.getCity() + ": " + weatherData.getHumidity());
-*/
-            // Get the current weather data
-
+            // Get the current temperature in Kelvin
             double temperature = data.getJSONObject("main").getDouble("temp");
             double humidity = data.getJSONObject("main").getDouble("humidity");
             double windSpeed = data.getJSONObject("wind").getDouble("speed");
 
             //format the celsius with many decimals to a number with only 2 decimal places
             DecimalFormat df = new DecimalFormat("#.00");
+            // Get the description
 
+            System.out.println("Current weather in " + city + firstWeatherEntry);
             System.out.println("Current temperature in " + city + ": "+ df.format(temperature) + "°C");
             System.out.println("Current humidity in " + city + ": "+ humidity + "%");
             System.out.println("Current wind speed in " + city + ": "+ windSpeed + "km/h");
-
-
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }

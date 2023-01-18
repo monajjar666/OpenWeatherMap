@@ -1,0 +1,70 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,12 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="correct the decimal number">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/WeatherData.java" afterDir="false" />
++    <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="getting weather Data">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/OpenWeatherMapClient.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -95,7 +91,7 @@
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;/Users/yukarisp/IdeaProjects/fhtw/ode/OpenWeatherMap&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/alnag/Desktop/FH/WS2022/Verteilte Systeme/jms-examples&quot;,
+     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
+   }
+@@ -200,7 +196,11 @@
+       <workItem from="1672301669107" duration="550000" />
+       <workItem from="1672391727831" duration="4228000" />
+       <workItem from="1672689487779" duration="6000" />
+-      <workItem from="1673289525115" duration="9939000" />
++      <workItem from="1673289525115" duration="11225000" />
++      <workItem from="1673801904625" duration="700000" />
++      <workItem from="1673954875236" duration="246000" />
++      <workItem from="1673977744585" duration="29000" />
++      <workItem from="1673992287100" duration="624000" />
+     </task>
+     <task id="LOCAL-00001" summary="sending API get request and handling the responce with Json object">
+       <created>1672393117197</created>
+@@ -216,7 +216,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1672397426624</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="getting weather Data">
++      <created>1673345587942</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1673345587942</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -237,6 +244,7 @@
+     <MESSAGE value="First class commit" />
+     <MESSAGE value="sending API get request and handling the responce with Json object" />
+     <MESSAGE value="correct the decimal number" />
+-    <option name="LAST_COMMIT_MESSAGE" value="correct the decimal number" />
++    <MESSAGE value="getting weather Data" />
++    <option name="LAST_COMMIT_MESSAGE" value="getting weather Data" />
+   </component>
+ </project>
+\ No newline at end of file
