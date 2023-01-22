@@ -9,9 +9,18 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.DecimalFormat;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+
 public class Main {
     public static void main(String[] args) {
         try {
+
+            @FXML
+            private MenuButton CityMenu;
 
             String apiKey = "867af03f01d0abe6ad281a43f856f541";
 
