@@ -27,8 +27,15 @@
       <Label layoutX="14.0" layoutY="357.0" text="Label" />
       <MenuButton fx:id="CityMenu" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="CITY">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem mnemonicParsing="false" text="Bregenz" />
+          <MenuItem mnemonicParsing="false" text="Eisenstadt" />
+           <MenuItem mnemonicParsing="false" text="Graz" />
+           <MenuItem mnemonicParsing="false" text="Innsbruck" />
+           <MenuItem mnemonicParsing="false" text="Klagenfurt" />
+           <MenuItem mnemonicParsing="false" text="Linz" />
+           <MenuItem mnemonicParsing="false" text="Salzburg" />
+           <MenuItem mnemonicParsing="false" text="St. Pölten" />
+           <MenuItem mnemonicParsing="false" text="Wien" />
         </items>
       </MenuButton>
    </children>
