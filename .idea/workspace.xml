@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
     <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="adds a fxml file and the OpenWeatherMapApplication class">
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/OpenWeatherMapApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/OpenWeatherMapApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/at/fhtw/open_weather_map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/at/fhtw/open_weather_map.fxml" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +56,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -80,25 +80,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/yukarisp/IdeaProjects/fhtw/ode/OpenWeatherMap",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/yukarisp/IdeaProjects/fhtw/ode/OpenWeatherMap&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Main">
+}</component>
+  <component name="RunManager" selected="Application.OpenWeatherMapFXMLApplication">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="at.fhtw.Main" />
       <module name="OpenWeatherMap.main" />
@@ -125,13 +125,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OpenWeatherMapFXMLApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="at.fhtw.openweathermapfxml.OpenWeatherMapFXMLApplication" />
+      <module name="OpenWeatherMap.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="at.fhtw.openweathermapfxml.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="OpenWeatherMap" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="OpenWeatherMap" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-
+        <item itemvalue="Application.OpenWeatherMapFXMLApplication" />
         <item itemvalue="Application.OpenWeatherMapApplication" />
-
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.OpenWeatherMap [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -147,11 +171,9 @@
       <workItem from="1670870112933" duration="2063000" />
       <workItem from="1672298089123" duration="2311000" />
       <workItem from="1672301669107" duration="550000" />
-
       <workItem from="1673635438619" duration="637000" />
       <workItem from="1674333279876" duration="4142000" />
       <workItem from="1674378297583" duration="6959000" />
-
     </task>
     <task id="LOCAL-00001" summary="changes the build.gradle file so java FX should work">
       <created>1674337948370</created>
@@ -160,14 +182,6 @@
       <option name="project" value="LOCAL" />
       <updated>1674337948370</updated>
     </task>
-    <task id="LOCAL-00002" summary="adds a fxml file and the OpenWeatherMapApplication class">
-      <created>1674341440137</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1674341440137</updated>
-    </task>
-
     <task id="LOCAL-00002" summary="correct the decimal number">
       <created>1672397426624</created>
       <option name="number" value="00002" />
@@ -175,7 +189,6 @@
       <option name="project" value="LOCAL" />
       <updated>1672397426624</updated>
     </task>
-
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
@@ -207,10 +220,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First class commit" />
-
     <MESSAGE value="changes the build.gradle file so java FX should work" />
     <MESSAGE value="adds a fxml file and the OpenWeatherMapApplication class" />
     <option name="LAST_COMMIT_MESSAGE" value="adds a fxml file and the OpenWeatherMapApplication class" />
-
   </component>
 </project>
