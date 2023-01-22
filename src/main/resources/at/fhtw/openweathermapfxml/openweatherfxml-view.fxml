@@ -42,16 +42,17 @@
                             <String fx:value="Graz"/>
                             <String fx:value="Leibnitz"/>
                             <String fx:value="Innsbruck"/>
-                            <String fx:value="Sölden"/>
+                            <String fx:value="Soelden"/>
                             <String fx:value="Linz"/>
-                            <String fx:value="Grünau"/>
+                            <String fx:value="Gruenau"/>
                             <String fx:value="Salzburg"/>
                             <String fx:value="Rauris"/>
                             <String fx:value="Klagenfurt"/>
                             <String fx:value="Spittal"/>
-                            <String fx:value="Sankt Pölten"/>
+                            <String fx:value="Sankt Poelten"/>
                             <String fx:value="Zwettl"/>
                             <String fx:value="Vienna"/>
+
                         </FXCollections>
                     </items>
                 </ComboBox>
