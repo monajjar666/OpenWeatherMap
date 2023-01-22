@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="adds a fxml file and the OpenWeatherMapApplication class">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/OpenWeatherMapApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/OpenWeatherMapApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/at/fhtw/open_weather_map.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/at/fhtw/open_weather_map.fxml" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +63,16 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev_Mo" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2IVXhgjf2WEXgE1myBRGwG8YlyF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -122,8 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
+
         <item itemvalue="Application.OpenWeatherMapApplication" />
+
         <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.OpenWeatherMap [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -139,9 +147,11 @@
       <workItem from="1670870112933" duration="2063000" />
       <workItem from="1672298089123" duration="2311000" />
       <workItem from="1672301669107" duration="550000" />
+
       <workItem from="1673635438619" duration="637000" />
       <workItem from="1674333279876" duration="4142000" />
       <workItem from="1674378297583" duration="6959000" />
+
     </task>
     <task id="LOCAL-00001" summary="changes the build.gradle file so java FX should work">
       <created>1674337948370</created>
@@ -157,6 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1674341440137</updated>
     </task>
+
+    <task id="LOCAL-00002" summary="correct the decimal number">
+      <created>1672397426624</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672397426624</updated>
+    </task>
+
     <option name="localTasksCounter" value="3" />
     <servers />
   </component>
@@ -188,8 +207,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First class commit" />
+
     <MESSAGE value="changes the build.gradle file so java FX should work" />
     <MESSAGE value="adds a fxml file and the OpenWeatherMapApplication class" />
     <option name="LAST_COMMIT_MESSAGE" value="adds a fxml file and the OpenWeatherMapApplication class" />
+
   </component>
 </project>
