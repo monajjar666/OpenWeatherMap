@@ -37,7 +37,6 @@
                     </VBox.margin>
                     <items>
                         <FXCollections fx:factory="observableArrayList" >
-                            <String fx:value="--Please select a city--"/>
                             <String fx:value="Bregenz"/>
                             <String fx:value="Dornbirn"/>
                             <String fx:value="Eisenstadt"/>
