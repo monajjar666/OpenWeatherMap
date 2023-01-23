@@ -1,0 +1,87 @@
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	
++++ b/build.gradle	
+@@ -14,7 +14,7 @@
+     implementation 'org.json:json:20220924'
+     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.3'
++    //implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.3'
+ }
+ 
+ test {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,7 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="">
++    <list default="true" id="30f54130-f0f4-4702-86a9-1a452c071700" name="Changes" comment="Für Sicherheit pushe ich einmal -- weather description is there! :-)">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/fhtw/Main.java" afterDir="false" />
+@@ -71,7 +71,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="dev_Mo" />
++        <entry key="$PROJECT_DIR$" value="master" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -201,6 +201,7 @@
+       <workItem from="1672301669107" duration="550000" />
+       <workItem from="1672391727831" duration="2972000" />
+       <workItem from="1673979903490" duration="1557000" />
++      <workItem from="1674460076865" duration="332000" />
+     </task>
+     <task id="LOCAL-00001" summary="sending API get request and handling the responce with Json object">
+       <created>1672393117197</created>
+@@ -220,7 +221,34 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="user">
++                    <value>
++                      <list>
++                        <option value="*" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++      </map>
++    </option>
++    <option name="RECENT_FILTERS">
++      <map>
++        <entry key="User">
++          <value>
++            <list>
++              <RecentGroup>
++                <option name="FILTER_VALUES">
++                  <option value="*" />
++                </option>
++              </RecentGroup>
++            </list>
+           </value>
+         </entry>
+       </map>
