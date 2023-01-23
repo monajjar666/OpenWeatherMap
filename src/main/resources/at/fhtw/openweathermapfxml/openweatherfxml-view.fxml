@@ -23,12 +23,15 @@
         </Label>
         <VBox layoutX="50.0" layoutY="66.0" prefHeight="520.0" prefWidth="400.0">
             <children>
-                <Label text="Select a city">
+                <Label text="Weather Forcast">
                     <VBox.margin>
                         <Insets left="50.0" top="10.0" />
                     </VBox.margin>
+                    <font>
+
+                    </font>
                 </Label>
-                <ComboBox prefWidth="150.0" fx:id="selectCities">
+                <ComboBox prefWidth="150.0" fx:id="selectCities" promptText="--select a city--">
                     <VBox.margin>
                         <Insets left="60.0" top="10.0" />
                     </VBox.margin>

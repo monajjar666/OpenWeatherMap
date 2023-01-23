@@ -1,0 +1,19 @@
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\n    id 'java'\n    id 'application'\n    id 'org.openjfx.javafxplugin' version '0.0.13'\n    id 'org.beryx.jlink' version '2.25.0'\n}\n\ngroup 'at.fhtw'\nversion '1.0-SNAPSHOT'\n\nrepositories {\n    mavenCentral()\n}\n\n\next {\n    junitVersion = '5.8.2'\n}\n\nsourceCompatibility = '17'\ntargetCompatibility = '17'\n\ntasks.withType(JavaCompile) {\n    options.encoding = 'UTF-8'\n}\n\napplication {\n    mainModule = 'at.fhtw.openweathermapfxml'\n    mainClass = 'at.fhtw.openweathermapfxml.OpenWeatherMapFXMLApplication'\n}\n\njavafx {\n    version = '17.0.2'\n    modules = ['javafx.controls', 'javafx.fxml']\n}\n\ndependencies {\n// https://mvnrepository.com/artifact/org.json/json\n    implementation 'org.json:json:20220924'\n    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'\n    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'\n    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.3'\n}\n\ntest {\n    useJUnitPlatform()\n}\n\njlink {\n    imageZip = project.file(\"${buildDir}/distributions/app-${javafx.platform.classifier}.zip\")\n    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']\n    launcher {\n        name = 'app'\n    }\n}\n\njlinkZip {\n    group = 'distribution'\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision ca047f65ecb6c006700d3860695be6e7f6d3b2ce)
++++ b/build.gradle	(date 1674460672553)
+@@ -39,7 +39,7 @@
+     implementation 'org.json:json:20220924'
+     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.3'
++    //implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.3'
+ }
+ 
+ test {
